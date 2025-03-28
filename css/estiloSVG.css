@@ -1,0 +1,133 @@
+/* Reset de márgenes y paddings para evitar espacios en blanco */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white; /* Fondo blanco para el contenido */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: black; /* Fondo completamente negro */
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    width: 100vw;
+    z-index: 1000;
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    width: 100vw;
+    background-color: black; /* Sin transparencias */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Lista del menú */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    gap: 5px;
+}
+
+/* Elementos del menú */
+nav ul li {
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Estilos para los enlaces */
+nav ul li a {
+    display: block;
+    padding: 12px 18px;
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    border-radius: 4px;
+}
+
+/* Efecto hover */
+nav ul li:hover a {
+    color: #fff;
+    background-color: rgba(58, 30, 184, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Subrayado animado */
+nav ul li::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #0056b3, #00aaff); ;
+    left: 50%;
+    bottom: 8px;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+nav ul li:hover::after {
+    width: 60%;
+}
+
+#titulo{
+    text-align: center;
+    font-size: 3rem;
+    color: #000000;
+}
+
+#contenedor-SVG {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    text-align: center;
+    width: 100%;
+    min-height: 100vh;
+    max-width: 1100px; 
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#subtitulo {
+    text-align: center;
+    font-size: 2rem;
+    color: #000000;
+}
+
+#banderas, #ejemplos-svg {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre elementos */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.elemento-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+}
+

@@ -1,0 +1,311 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: black;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    width: 100vw;
+    z-index: 1000;
+}
+
+header img {
+    height: 100%;
+    max-height: 70px;
+    object-fit: contain;
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Lista del menú */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    gap: 5px;
+}
+
+/* Elementos del menú */
+nav ul li {
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Estilos para los enlaces */
+nav ul li a {
+    display: block;
+    padding: 12px 18px;
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    border-radius: 4px;
+}
+
+/* Efecto hover */
+nav ul li:hover a {
+    color: #fff;
+    background-color: rgba(58, 30, 184, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Subrayado animado */
+nav ul li::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #0056b3, #00aaff);
+    left: 50%;
+    bottom: 8px;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+nav ul li:hover::after {
+    width: 60%;
+}
+
+/* Tutor */
+main {
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;
+}
+
+h1 {
+    margin-bottom: 10px;
+    color: #00aaff;
+}
+
+p {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    resize: vertical;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button {
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover {
+    background-color: #0073e6;
+}
+
+pre {
+    background-color: #2a2a2a;
+    color: #00ff00;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 20px;
+    white-space: pre-wrap;
+}
+
+/*chat*/
+.chat-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    border: 1px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    background: linear-gradient(145deg, #1f1f1f, #2c2c2c);
+}
+
+/* Cabecera del chat */
+.chat-header {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: #e0e0e0;
+    padding: 15px 20px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    gap: 10px;
+    border-bottom: 1px solid #444;
+}
+
+/* Área de mensajes */
+.chat-box {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #1f1f1f;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Botones de preguntas rápidas */
+.quick-questions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    justify-content: center;
+    background-color: #2c2c2c;
+    border-top: 1px solid #444;
+}
+
+.quick-question {
+    padding: 8px 16px;
+    background-color: #3b3b3b;
+    color: #e0e0e0;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #555;
+    transition: background-color 0.2s, transform 0.1s;
+    text-align: center;
+}
+
+.quick-question:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+/* Estilos para mensajes */
+.message {
+    padding: 12px 16px;
+    margin: 8px 0;
+    border-radius: 20px;
+    max-width: 80%;
+    word-wrap: break-word;
+    line-height: 1.5;
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.user-question {
+    background-color: #007bff;
+    color: white !important;
+    align-self: flex-end;
+    border-radius: 20px 20px 5px 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.bot-message {
+    background-color: #444;
+    color: #ddd;
+    align-self: flex-start;
+    border-radius: 20px 20px 20px 0;
+    margin-bottom: 4px;
+    border: 1px solid #555;
+}
+
+/* Área de entrada de texto */
+.chat-input-container {
+    background-color: #2c2c2c;
+    border-top: 1px solid #444;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    background-color: #2c2c2c;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    background-color: #1f1f1f;
+    color: #ddd;
+    transition: border 0.3s;
+}
+
+.chat-input input:focus {
+    border-color: #666;
+}
+
+.chat-input button {
+    margin-left: 12px;
+    padding: 12px 20px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.chat-input button:hover {
+    background-color: #666;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

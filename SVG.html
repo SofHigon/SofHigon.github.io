@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=0.8,maxium-scale=0.8,minium-scale=0.8"> 
+    <title>SVG</title>
+    
+    <link rel="stylesheet" href="css/estiloSVG.css">
+    <link rel="shortcut icon" href="imagenes/svg.png">
+</head>
+<body>
+    <header><img src="imagenes/logo.png" height="100%" alt="no se ve"></header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Chat.html">Chat</a></li>
+            <li><a href="Tutor.html">Tutor LPP</a></li>
+            <li><a href="Flotantes.html">Float</a></li>
+            <li><a href="Consulta.html">Consulta</a></li>
+            <li><a href="Transiciones.html">Transiciones</a></li>
+            <li><a href="Columnas.html">Columnas</a></li>
+            <li><a href="Audio.html">Audio</a></li>
+            <li><a href="Degradados.html">Deg</a></li>
+            <li><a href="Animaciones.html">Animaciones</a></li>
+            <li><a href="SVG.html">SVG</a></li>
+            <li><a href="Editables.html">Editables</a></li>
+           
+            
+        </ul>
+    </nav>
+    <div id="contenedor-SVG">
+        <section>
+            <h1 id="titulo">SVG</h1>
+            <br>
+            <p>El elemento SVG permite crear imágenes vectoriales escalables de forma dinámica e interactiva mediante 
+                atributos como < rect>, < circle>, < line>, < ellipse>, < polygon>, < polyline> y < text>. Desde su recomendación 
+                por el W3C en 2001, es compatible con la mayoría de navegadores.Un uso común es el dibujo de formas 
+                geométricas y banderas por su simplicidad.</p>
+            <br>
+            <h1 id="subtitulo">Ejemplos Imágenes SVG</h1>
+            <br>
+            <div id="banderas">
+                <div class="elemento-container">
+                    <h2>Japón</h2>
+                    <svg width="150" height="90" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="150" height="90" fill="white" stroke="black" stroke-width="1" />
+                        <circle cx="75" cy="45" r="35" fill="red" />
+                    </svg>
+                </div>
+    
+                <div class="elemento-container">
+                    <h2>Italia</h2>
+                    <svg width="150" height="90" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="150" height="90" fill="green" stroke="black" stroke-width="1" />
+                        <rect x="50" y="1" width="50" height="90" fill="white" />
+                        <rect x="100" y="1" width="50" height="90" fill="red" />
+                    </svg>
+                </div>
+    
+                <div class="elemento-container">
+                    <h2>Alemania</h2>
+                    <svg width="150" height="90" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="150" height="90" fill="black" stroke="black" stroke-width="1" />
+                        <rect x="0" y="30" width="150" height="30" fill="red" />
+                        <rect x="0" y="60" width="150" height="30" fill="yellow" />
+                    </svg>
+                </div>
+    
+                <div class="elemento-container">
+                    <h2>Catalunya</h2>
+                    <svg width="150" height="90" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="150" height="90" fill="yellow" stroke="black" stroke-width="1" />
+                        <rect x="0" y="10" width="150" height="10" fill="red" />
+                        <rect x="0" y="30" width="150" height="10" fill="red" />
+                        <rect x="0" y="50" width="150" height="10" fill="red" />
+                        <rect x="0" y="70" width="150" height="10" fill="red" />
+                    </svg>
+                </div>
+    
+                <div class="elemento-container">
+                    <h2>Noruega</h2>
+                    <svg width="150" height="90" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="150" height="90" fill="red" stroke="black" stroke-width="1" />
+                        <rect x="38" y="0" width="30" height="90" fill="white" />
+                        <rect x="0" y="33" width="150" height="30" fill="white" />
+                        <rect x="45" y="0" width="16" height="90" fill="blue" />
+                        <rect x="0" y="40" width="150" height="16" fill="blue" />
+                    </svg>
+                </div>
+            </div>
+    
+            <h1>Ejemplos de Elementos SVG</h1>
+            <div id="ejemplos-svg">
+                <div class="elemento-container">
+                    <h2>Rectángulo</h2>
+                    <svg width="100" height="100">
+                        <rect x="0" y="0" rx="12" ry="12" width="60" height="60"
+                            fill="gold" stroke="green" stroke-width="1" opacity="0.8" />
+                    </svg>
+                </div>
+    
+                <div class="elemento-container">
+                    <h2>Círculo</h2>
+                    <svg width="200" height="200">
+                        <circle cx="100" cy="100" r="45" fill="olive" stroke="black"
+                            stroke-width="1" opacity="0.9" />
+                    </svg>
+                </div>
+    
+                <div class="elemento-container">
+                    <h2>Elipse</h2>
+                    <svg width="200" height="200">
+                        <ellipse cx="100" cy="100" rx="50" ry="25" fill="purple"
+                            stroke="black" stroke-width="1" />
+                    </svg>
+                </div>
+    
+                <div class="elemento-container">
+                    <h2>Línea</h2>
+                    <svg width="260" height="50">
+                        <line x1="0" y1="0" x2="260" y2="40" stroke="fuchsia"
+                            stroke-width="4" stroke-dasharray="18,7,9,20" />
+                    </svg>
+                </div>
+    
+                <div class="elemento-container">
+                    <h2>Polilínea</h2>
+                    <svg width="100" height="100">
+                        <polyline points="0,90, 10,90, 10,40, 40,10, 50,20, 50,10, 60,10, 60,30, 70,40, 70,90, 80,90"
+                            fill="none" stroke="black" stroke-width="3" />
+                    </svg>
+                </div>
+    
+                <div class="elemento-container">
+                    <h2>Polígono</h2>
+                    <svg width="100" height="100">
+                        <polygon points="50,0, 82,100, 0,37, 100,37, 20,100, 50,0"
+                            fill="gold" stroke="black" stroke-width="3" />
+                        <polygon points="50,0, 62,37, 100,37, 70,61, 82,100, 50,75, 20,100, 31,61, 0,37, 39,37, 50,0"
+                            fill="gold" stroke="black" stroke-width="3" />
+                    </svg>
+                </div>
+    
+                <div class="elemento-container">
+                    <h2>Texto SVG</h2>
+                    <svg width="200" height="100">
+                        <text x="30" y="35" rotate="17 0 -9 11 10 -3" fill="red"
+                            stroke="red" stroke-width="2" font-size="24px"
+                            font-family="Arial">
+                            Javier
+                        </text>
+                    </svg>
+                </div>
+            </div>
+    
+        </section>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,301 @@
+/* Reset de márgenes y paddings para evitar espacios en blanco */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: black; 
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    width: 100vw;
+    z-index: 1000;
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    width: 100vw;
+    background-color: black; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Lista del menú */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    gap: 5px;
+}
+
+/* Elementos del menú */
+nav ul li {
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Estilos para los enlaces */
+nav ul li a {
+    display: block;
+    padding: 12px 18px;
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    border-radius: 4px;
+}
+
+/* Efecto hover */
+nav ul li:hover a {
+    color: #fff;
+    background-color: rgba(58, 30, 184, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Subrayado animado */
+nav ul li::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #0056b3, #00aaff); ;
+    left: 50%;
+    bottom: 8px;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+nav ul li:hover::after {
+    width: 60%;
+}
+/*Degradados*/
+.container-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tituloDeg {
+    text-align: center;
+    font-size: 3rem;
+    color: #000000;
+    font-weight: bold; /* Hace que el título sea más llamativo */
+    margin-bottom: 20px; /* Añade espacio debajo del título */
+}
+
+div {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+#imagenColores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cuadradoConOpacidad {
+    width: 60px;
+    height: 30px;
+    background-color: rgba(255, 0, 0, 0.4);
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#cuadradoRojo {
+    width: 60px;
+    height: 30px;
+    background-color: rgba(255, 0, 0, 1);
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+.contenedor-ejemplos {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* Espacio entre ejemplos */
+}
+
+.ejemplo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    /* Espacio entre el título y el degradado */
+}
+
+
+.degradado {
+    float: left;
+    width: 600px;
+    height: 110px;
+    margin-bottom: 50px;
+    border-radius: 4px;
+}
+
+#cuadrado-con-degradado1 {
+    background: linear-gradient(to bottom, red, orange, yellow);
+}
+
+#cuadrado-con-degradado2 {
+    background: linear-gradient(30deg, crimson, sienna, royalblue, indianred, purple);
+}
+
+#cuadrado-con-degradado3 {
+    background: linear-gradient(to bottom, black 10%, orangered 75%, yellow);
+}
+
+.contenedor-radiales {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* Espacio entre cada ejemplo */
+}
+
+.ejemplo1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.degradado1 {
+    width: 450px;
+    height: 200px;
+    border-radius: 8px;
+}
+
+/* Ejemplo 1: closest-side */
+#cuadro-closest-side {
+    background: radial-gradient(circle closest-side at 100px 75px, red, yellow, black);
+}
+
+/* Ejemplo 2: farthest-side */
+#cuadro-farthest-side {
+    background: radial-gradient(circle farthest-side at 100px 75px, red, yellow, black);
+}
+
+/* Ejemplo 3: closest-corner */
+#cuadro-closest-corner {
+    background: radial-gradient(circle closest-corner at 100px 75px, red, yellow, black);
+}
+
+/* Ejemplo 4: farthest-corner */
+#cuadro-farthest-corner {
+    background: radial-gradient(circle farthest-corner at 100px 75px, red, yellow, black);
+
+}
+
+.contenedor-metalizados {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.ejemplo2 {
+    text-align: center;
+}
+
+.degradado2 {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+/* Metalizado 1 */
+#cuadro-metalizado1 {
+    background: radial-gradient(circle at center, black, #1162ac);
+}
+
+/* Metalizado 2 */
+#cuadro-metalizado2 {
+    background: radial-gradient(ellipse at 150px top, white, #1162ac, black);
+}
+
+/* Metalizado 3 */
+#cuadro-metalizado3 {
+    background: radial-gradient(ellipse at center, white 25%, peru 66%, black 96%);
+}
+
+#tituloE{
+    text-align: center;
+    font-size: 3rem;
+    color: #000000;
+}
+
+#contenido-editable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh; /* Para centrarlo mejor */
+}
+
+#editable {
+    border: 2px solid #b8c78a;  
+    background-color: #f9fbe7;  
+    padding: 20px;
+    border-radius: 12px; /* Bordes más suaves */
+    font-family: 'Poppins', sans-serif; 
+    max-width: 450px; 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s ease-in-out; 
+}
+
+#editable:hover {
+    transform: scale(1.02); /* Pequeño efecto al pasar el mouse */
+}
+
+#editable h2 {
+    font-weight: 600;
+    font-size: 1.2em;
+    color: #5d6d2c; /* Verde oscuro para destacar */
+    margin-top: 0;
+    text-align: center;
+}
+
+#editable ul {
+    list-style: none;
+    padding: 0;
+}
+
+#editable li {
+    background-color: #dfe6c1; /* Fondo suave para cada ítem */
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 6px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+}
+
+#editable li:hover {
+    background-color: #c8d89b; 
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f4f4f4;
+}

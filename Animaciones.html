@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=0.8,maxium-scale=0.8,minium-scale=0.8"> 
+    <title>Animaciones</title>
+    
+    <link rel="stylesheet" href="css/estilo2.css">
+    <link rel="shortcut icon" href="imagenes/animacion.png" >
+      
+</head>
+<body>
+    <header><img src="imagenes/logo.png" height="100%" alt="no se ve"></header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Chat.html">Chat</a></li>
+            <li><a href="Tutor.html">Tutor LPP</a></li>
+            <li><a href="Flotantes.html">Float</a></li>
+            <li><a href="Consulta.html">Consulta</a></li>
+            <li><a href="Transiciones.html">Transiciones</a></li>
+            <li><a href="Columnas.html">Columnas</a></li>
+            <li><a href="Audio.html">Audio</a></li>
+            <li><a href="Degradados.html">Deg</a></li>
+            <li><a href="Animaciones.html">Animaciones</a></li>
+            <li><a href="SVG.html">SVG</a></li>
+            <li><a href="Editables.html">Editables</a></li>
+           
+        
+        </ul>
+    </nav>
+    
+    <div class=" header-content">
+    <section>
+        <div id="titulo-container">
+            <h1 id="titulom">Animaciones</h1>
+        </div>
+        <br>
+        <p>
+            En esta animación, Mario Bros salta cuando pasamos el cursor sobre él. 
+            Utilizamos la propiedad <b>transform</b> con <b>translateY</b> dentro de una animación definida con 
+            <b>@keyframes</b>. Esto nos permite darle un efecto dinámico y llamativo sin afectar el resto de la imagen.
+        </p>
+        
+        <br>
+        <div id="mario-container">
+            <img id="mario" src="../tutorial/imagenes/mario.png" alt="Mario saltando" width="200">
+        </div>
+        <div id="titulo-container">
+            <h1 id="subtitulom">Otro ejemplo</h1>
+        </div>
+        <br>
+        <p>
+            De una manera parecida a las transiciones,
+            pero con una mayor potencialidad, en HTML5
+            tenemos a nuestra disposición las animaciones
+            (animation).
+        </p>
+        <p>
+            Para empezar con algo sencillo, primero vamos
+            a hacer paso a paso que el martillo (creado en SVG)
+            -y que ya hemos utilizado en otros temas- gire al
+            colocar el cursor encima.
+        </p>
+        <p>
+            <b>Sitúa el cursor encima del martillo</b> para ver la
+            animación.
+        </p>
+        <br>
+        <div id="martillo3">
+            <svg width="120" height="190" xmlns="http://www.w3.org/2000/svg">
+                <rect x="43" y="10" width="14" height="160" rx="6" ry="5"
+                    fill="#895111" />
+                <rect x="43" y="10" width="14" height="160" rx="6" ry="5"
+                    fill="#895111" />
+                <rect x="45" y="15" width="4" height="150" rx="6" ry="6"
+                    fill="#A68661" />
+                <rect x="10" y="22" width="80" height="45" rx="14" ry="12"
+                    fill="#6E6E5F" />
+                <rect x="20" y="37" width="62" height="24" rx="6" ry="6"
+                    fill="#898982" />
+                <rect x="20" y="25" width="62" height="6" rx="4" ry="4"
+                    fill="#C2C2B6" />
+                <rect x="43" y="67" width="14" height="9" fill="#482907" />
+            </svg>
+        </div>
+        
+    </section>
+    </div>
+  
+</body>
+</html>

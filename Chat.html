@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Estético</title>
+    <link rel="stylesheet" href="css/estilo5.css">
+    <link rel="shortcut icon" href="imagenes/chatbot.png">
+</head>
+
+<body>
+    <header><img src="imagenes/logo.png" height="100%" alt="no se ve"></header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Chat.html">Chat</a></li>
+            <li><a href="Tutor.html">Tutor LPP</a></li>
+            <li><a href="Flotantes.html">Float</a></li>
+            <li><a href="Consulta.html">Consulta</a></li>
+            <li><a href="Transiciones.html">Transiciones</a></li>
+            <li><a href="Columnas.html">Columnas</a></li>
+            <li><a href="Audio.html">Audio</a></li>
+            <li><a href="Degradados.html">Deg</a></li>
+            <li><a href="Animaciones.html">Animaciones</a></li>
+            <li><a href="SVG.html">SVG</a></li>
+            <li><a href="Editables.html">Editables</a></li>
+        </ul>
+    </nav>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            🤖 Chatbot de Programación
+        </div>
+    
+        <div class="chat-box" id="chatBox">
+            <div class="message bot-message">
+                ¡Hola! Soy un asistente especializado en programación. Selecciona una pregunta o escribe la tuya:
+            </div>
+        </div>
+    
+        <!-- Área de entrada de texto y preguntas rápidas -->
+        <div class="chat-input-container">
+            <div class="quick-questions">
+                <div class="quick-question" onclick="sendQuickQuestion('¿Qué es este chatbot?')">¿Qué es este chatbot?</div>
+                <div class="quick-question" onclick="sendQuickQuestion('¿Cómo funciona?')">¿Cómo funciona?</div>
+                <div class="quick-question" onclick="sendQuickQuestion('¿Qué lenguajes recomiendas para principiantes?')">Lenguajes para principiantes</div>
+                <div class="quick-question" onclick="sendQuickQuestion('¿Cómo depurar errores en mi código?')">Depurar errores</div>
+                <div class="quick-question" onclick="sendQuickQuestion('¿Cómo empezar a programar?')">¿Cómo empezar a programar?</div>
+                <div class="quick-question" onclick="sendQuickQuestion('¿Qué lenguaje aprender?')">¿Qué lenguaje aprender?</div>
+                <div class="quick-question" onclick="sendQuickQuestion('¿Qué es HTML?')">¿Qué es HTML?</div>
+                <div class="quick-question" onclick="sendQuickQuestion('¿Qué es CSS?')">¿Qué es CSS?</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Escribe un mensaje..." autocomplete="off">
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+    </div>
+    <script>// Base de conocimiento completa para el chatbot
+        const faqDatabase = {
+            // --- Preguntas básicas ---
+            "¿Qué es este chatbot?": "🤖 Soy un asistente virtual especializado en programación y desarrollo web. Puedo responder tus dudas técnicas, explicar conceptos y darte ejemplos prácticos de código.",
+            "¿Cómo funciona?": "🔧 Mi funcionamiento:\n\n1. Analizo tus preguntas\n2. Busco en mi base de conocimiento\n3. Proporciono la mejor respuesta posible\n\nPuedes preguntarme sobre:\n- Lenguajes de programación\n- Frameworks\n- Solución de errores\n- Mejores prácticas",
+        
+            // --- Preguntas técnicas ---
+            "¿Qué lenguajes recomiendas para principiantes?": "🚀 Lenguajes ideales para empezar:\n\n• Python - Sintaxis clara y versátil\n• JavaScript - Para desarrollo web\n• HTML/CSS - Bases de la web\n• Scratch - Para niños (8-16 años)\n\nRecomiendo empezar con Python por su curva de aprendizaje suave.",
+            "¿Cómo depurar errores en mi código?": "🐛 Guía para depuración:\n\n1. Lee detenidamente el mensaje de error\n2. Verifica la línea señalada\n3. Usa console.log() para rastrear valores\n4. Aísla el problema (prueba código por partes)\n5. Busca en StackOverflow\n6. Pide ayuda a compañeros",
+            "¿Cómo empezar a programar?": "👨‍💻 Para empezar a programar:\n\n1. Elige un lenguaje sencillo (como Python o JavaScript)\n2. Aprende conceptos básicos (variables, condicionales, bucles)\n3. Realiza proyectos pequeños para practicar\n4. Utiliza recursos en línea como cursos y documentación\n5. No temas equivocarte, el aprendizaje viene con la práctica.",
+            "¿Qué lenguaje aprender?": "🌐 La elección depende de tus objetivos:\n\n- Desarrollo web: JavaScript\n- Ciencia de datos: Python\n- Desarrollo móvil: Kotlin (Android) o Swift (iOS)\n- Desarrollo de juegos: C# o C++\n- Backend: Python, Java o Node.js",
+            "¿Qué es HTML?": "🌐 HTML (HyperText Markup Language) es el lenguaje estándar para crear la estructura de páginas web. Utiliza etiquetas para definir elementos como párrafos, encabezados, imágenes y enlaces.",
+            "¿Qué es CSS?": "🎨 CSS (Cascading Style Sheets) es el lenguaje utilizado para dar estilo y diseño a páginas web. Controla colores, fuentes, márgenes, posiciones y mucho más, permitiendo crear interfaces atractivas y profesionales.",
+        
+            // --- Respuesta por defecto ---
+            "default": "🤔 Interesante pregunta. Estoy procesando tu consulta...\n\n¿Podrías reformularla o darme más detalles?"
+        };
+        
+        // Crear botones de preguntas rápidas
+        function createQuickQuestionButtons() {
+            const quickQuestions = Object.keys(faqDatabase).filter(key => key !== "default");
+            const quickQuestionsContainer = document.getElementById("quickQuestions");
+            quickQuestionsContainer.innerHTML = "";
+            quickQuestions.forEach(question => {
+                const button = document.createElement("button");
+                button.className = "quick-question";
+                button.textContent = question;
+                button.onclick = () => sendQuickQuestion(question);
+                quickQuestionsContainer.appendChild(button);
+            });
+        }
+        
+        // Enviar pregunta rápida
+        function sendQuickQuestion(question) {
+            addMessage(question, "user-question");
+            const answer = getAnswer(question);
+            addMessage(answer, "bot-message");
+        }
+        
+        // Obtener respuesta del chatbot
+        function getAnswer(question) {
+            const cleanQuestion = question.toLowerCase().trim();
+            for (const key in faqDatabase) {
+                if (cleanQuestion === key.toLowerCase()) {
+                    return faqDatabase[key];
+                }
+            }
+            return faqDatabase["default"];
+        }
+        
+        // Enviar mensaje desde el input
+        function sendMessage() {
+            const userInput = document.getElementById("userInput");
+            const question = userInput.value.trim();
+            if (!question) return;
+        
+            addMessage(question, "user-question");
+            userInput.value = "";
+        
+            // Simular respuesta del bot después de un pequeño retraso
+            setTimeout(() => {
+                const answer = getAnswer(question);
+                addMessage(answer, "bot-message");
+            }, 500);
+        }
+        
+        // Añadir mensaje al chat
+        function addMessage(text, className) {
+            const chatBox = document.getElementById("chatBox");
+            const messageDiv = document.createElement("div");
+            messageDiv.className = `message ${className}`;
+            messageDiv.innerHTML = text.replace(/\n/g, '<br>');
+            chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+        
+        // Enviar mensaje al presionar Enter
+        document.getElementById("userInput").addEventListener("keypress", function(e) {
+            if (e.key === "Enter") sendMessage();
+        });
+        
+        // Crear los botones al cargar la página
+        document.addEventListener("DOMContentLoaded", createQuickQuestionButtons);
+        </script>
+</body>
+</html>

@@ -1,0 +1,378 @@
+/* Reset de márgenes y paddings para evitar espacios en blanco */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white; 
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: black; 
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    width: 100vw;
+    z-index: 1000;
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    width: 100vw;
+    background-color: black; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Lista del menú */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    gap: 5px;
+}
+
+/* Elementos del menú */
+nav ul li {
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Estilos para los enlaces */
+nav ul li a {
+    display: block;
+    padding: 12px 18px;
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    border-radius: 4px;
+}
+
+/* Efecto hover */
+nav ul li:hover a {
+    color: #fff;
+    background-color: rgba(58, 30, 184, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Subrayado animado */
+nav ul li::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #0056b3, #00aaff); ;
+    left: 50%;
+    bottom: 8px;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+nav ul li:hover::after {
+    width: 60%;
+}
+
+/*consulta*/
+.contenedor {
+    text-align: center;
+    margin-bottom: 20px;
+}
+#title-SISTEMAS {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000000;
+   
+}
+
+.accordion-container {
+    display: flex;
+    justify-content: center;
+}
+
+.accordion-item {
+    border: 3px solid #ffffff; 
+    border-radius: 8px; 
+    margin-bottom: 5px; 
+    overflow: hidden; 
+}
+
+.accordion-button {
+    background-color: #333333 !important; 
+    color: #ffffff !important; 
+    border-bottom: 2px solid #ffffff !important; 
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #444444 !important; 
+    color: #ffffff !important;
+}
+
+.accordion-button:focus {
+    box-shadow: none !important; 
+}
+
+.accordion-body {
+    background-color: #222222; 
+    color: #ffffff; 
+    padding: 20px;
+}
+
+
+.tabla-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Diseño de las tablas centradas */
+.table {
+    width: 90%;
+    max-width: 900px;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 auto; 
+}
+
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+
+.table th {
+    background-color: #000000;
+    color: white;
+    font-size: 18px;
+}
+
+.table td ul {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.tabla-img {
+    width: 210px;
+    height: auto;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+}
+
+/*animaciones*/
+#titulom {
+    text-align: center;
+    font-size: 3rem;
+    color: #000000;
+    margin-bottom: 20px;
+}
+section {
+    max-width: 1100px; /* Ajusta el ancho del contenido */
+    margin: 0 auto; /* Centra la sección en la página */
+    padding: 20px;
+    text-align: justify; 
+}
+
+#martillo3 {
+    position: relative;
+    display: inline-block;
+}
+
+#martillo3:hover {
+    animation: animacion_martillo 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes animacion_martillo {
+    0% {
+        transform: rotate(0deg);
+        transform-origin: 50% 100%;
+    }
+
+    100% {
+        transform: rotate(90deg);
+        transform-origin: 50% 100%;
+    }
+}
+/*animacion mario bross*/
+#titulo {
+    text-align: center;
+    font-size: 4rem;
+    color: #333;
+}
+
+#subtitulom {
+    font-size: 2rem; 
+    font-weight: bold;
+    color: #000000;
+    text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+}
+
+section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify;
+}
+
+#mario-container {
+    display: flex;
+    justify-content: center;
+}
+
+#mario {
+    transition: transform 0.3s ease-in-out;
+}
+
+#mario:hover {
+    animation: salto_mario 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes salto_mario {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-30px);
+    }
+}
+
+@media screen and (max-width: 1220px){
+
+    .header-content{
+        max-width: 1000px;
+        padding: 0 20px;
+    }
+    }
+
+/*Transiciones*/
+
+.contenedor-martillo {
+    max-width: 1100px; 
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+ul {
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+#titulo-t {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#subtitulo-t {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #444;
+    margin-top: 40px;
+    text-align: left;
+}
+
+#martillo {
+    padding-left: 100px;
+    padding-right: 20px;
+    opacity: 1;
+    transition: opacity 1s ease-out 0.5s;
+}
+
+#martillo:hover {
+    opacity: 0;
+}
+
+/* ---- Contenedor de los ejemplos ---- */
+#contenedor-primer-ejemplo, #contenedor-segundo-ejemplo {
+    margin-top: 30px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#contenedor-primer-ejemplo p,
+#contenedor-segundo-ejemplo p {
+    max-width: 600px;
+    padding: 10px;
+}
+
+#martillo1, #martillo2 {
+    width: 120px;
+    height: 170px;
+    background-color: white;
+    position: relative;
+    transition: all 1.5s ease-in-out;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    will-change: transform, background-color;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#martillo1 {
+    left: 40px;
+}
+
+#martillo1:hover {
+    transform: translateX(400px);
+}
+
+#martillo2 {
+    left: 40px;
+    background-color: rgba(194, 191, 191, 0.664);
+    transition: 
+        transform 1.5s ease-in-out, 
+        background-color 2s ease-in-out,
+        width 1s ease-in-out,
+        height 1s ease-in-out,
+        padding-left 1s ease-in-out,
+        padding-top 1s ease-in-out;
+}
+
+#martillo2:hover {
+    transform: translateX(200px);
+    background-color: rgba(226, 93, 182, 0.897);
+    width: 225px;
+    height: 200px;
+    padding-left: 100px;
+    padding-top: 20px;
+}

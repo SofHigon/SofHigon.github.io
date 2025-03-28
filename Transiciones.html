@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=0.8,maxium-scale=0.8,minium-scale=0.8"> 
+    <title>Transiciones</title>
+    
+    <link rel="stylesheet" href="css/estilo2.css">
+    <link rel="shortcut icon" href="imagenes/transicion.png" > 
+</head>
+<body>
+    <header><img src="imagenes/logo.png" height="100%" alt="no se ve"></header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Chat.html">Chat</a></li>
+            <li><a href="Tutor.html">Tutor LPP</a></li>
+            <li><a href="Flotantes.html">Float</a></li>
+            <li><a href="Consulta.html">Consulta</a></li>
+            <li><a href="Transiciones.html">Transiciones</a></li>
+            <li><a href="Columnas.html">Columnas</a></li>
+            <li><a href="Audio.html">Audio</a></li>
+            <li><a href="Degradados.html">Deg</a></li>
+            <li><a href="Animaciones.html">Animaciones</a></li>
+            <li><a href="SVG.html">SVG</a></li>
+            <li><a href="Editables.html">Editables</a></li>
+           
+            
+        </ul>
+    </nav>
+
+    <div class="contenedor-martillo">
+        <h1 id="titulo-t">Transiciones</h1>
+        <p>Las transiciones (<code>transition</code>) funcionan como pequeñas animaciones que permiten cambios en la posición, tamaño, 
+           rotación y otras propiedades de los elementos con una duración definida, creando un efecto de animación sencilla.</p>
+        <p>Para observar su funcionamiento, usaremos un <code>&lt;div&gt;</code> llamado "martillo", que contiene una imagen en SVG.</p>
+
+        <div class="container-ejemplo">
+            <div id="martillo"><img src="../tutorial/imagenes/kuro.png" alt="Kuromi"></div>
+
+            <div id="text-box">
+                <p>A este <code>&lt;div&gt;</code> le aplicaremos varias transiciones (posición, tamaño y rotación) y cada una se activará 
+                   al pasar el cursor sobre los ejemplos.</p>
+
+                <p>Para que <code>transition</code> funcione correctamente en todos los navegadores, debemos utilizar los prefijos:</p>
+                <ul>
+                    <li><strong>-webkit-</strong> (para Chrome y Safari)</li>
+                    <li><strong>-moz-</strong> (para Firefox)</li>
+                    <li><strong>-o-</strong> (para Opera)</li>
+                    <li><strong>-ms-</strong> (para versiones modernas de Internet Explorer)</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 id="subtitulo-t">Transición con una única propiedad</h2>
+        <p>Cuando pases el cursor sobre la imagen de Melody, se producirá una transición que durará 1.5 segundos y moverá el <code>&lt;div&gt;</code> 
+           horizontalmente 400 píxeles hacia la derecha.</p>
+
+        <div id="contenedor-primer-ejemplo">
+            <div id="martillo1">
+                <img src="../tutorial/imagenes/melo.png" height="190px" width="205px" alt="Melody">
+            </div>
+            <p>En este código, se especifica que la transición cambiará la propiedad <code>left</code> cuando el usuario pase el cursor sobre el martillo. 
+               Para que funcione correctamente, el <code>position</code> del elemento debe ser <code>relative</code> o <code>absolute</code>.</p>
+        </div>
+
+        <h2 id="subtitulo-t">Transición con múltiples propiedades</h2>
+        <p>En este ejemplo, al pasar el cursor sobre la imagen de Hello Kitty, se producirán varias transiciones al mismo tiempo:</p>
+        <ul>
+            <li><strong>Movimiento hacia la derecha (<code>left</code>)</strong>: 400px en 1.5s</li>
+            <li><strong>Cambio de color de fondo (<code>background-color</code>)</strong>: negro en 2s</li>
+            <li><strong>Cambio de anchura (<code>width</code>)</strong>: 225px en 1s</li>
+            <li><strong>Cambio de altura (<code>height</code>)</strong>: 200px en 1s</li>
+            <li><strong>Expansión del padding izquierdo (<code>padding-left</code>)</strong>: 100px en 1s</li>
+            <li><strong>Expansión del padding superior (<code>padding-top</code>)</strong>: 20px en 1s</li>
+        </ul>
+
+        <div id="contenedor-segundo-ejemplo">
+            <div id="martillo2">
+                <img src="../tutorial/imagenes/kitty.png"  height="170px" width="200Spx"alt="Kitty">
+            </div>
+        </div>
+    </div>
+
+    
+   
+</body>
+</html>
